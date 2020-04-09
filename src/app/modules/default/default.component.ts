@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { MediaObserver, MediaChange } from '@angular/flex-layout';
 
 @Component({
   selector: 'app-default',
@@ -8,10 +9,22 @@ import { Component, OnInit } from '@angular/core';
 export class DefaultComponent implements OnInit {
 
   sidebarOpen = true;
+  sidebarMode = 'size';
 
-  constructor() { }
+  constructor(private mediaObserver: MediaObserver) { }
 
   ngOnInit() {
+    this.mediaObserver.asObservable().subscribe(
+      media => {
+        if (media[0].mqAlias === 'sm' || media[0].mqAlias === 'xs') {
+          this.sidebarOpen = false;
+          this.sidebarMode = 'over';
+        } else {
+          this.sidebarOpen = true;
+          this.sidebarMode = 'side';
+        }
+      }
+    );
   }
 
   sidebarToggler() {
