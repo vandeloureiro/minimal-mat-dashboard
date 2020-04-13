@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { MediaObserver, MediaChange } from '@angular/flex-layout';
+import { NavigationEnd, Router } from '@angular/router';
 
 @Component({
   selector: 'app-default',
@@ -11,9 +12,29 @@ export class DefaultComponent implements OnInit {
   sidebarOpen = true;
   sidebarMode = 'size';
 
-  constructor(private mediaObserver: MediaObserver) { }
+  constructor(
+    private mediaObserver: MediaObserver,
+    private router: Router
+    ) { }
 
   ngOnInit() {
+    this.observaMediaQuery();
+    this.observaTrocaDePagina();
+  }
+
+  // no mobile, ao clicar em uma menu o sidebar deve sumir
+  observaTrocaDePagina() {
+    this.router.events.subscribe(event => {
+      if (event instanceof NavigationEnd) {
+        if (this.sidebarMode === 'over') {
+          this.sidebarOpen = false;
+        }
+      }
+    });
+  }
+
+  // monitora a forma do sidebar (ao lado ou por cima) dependendo o tamanho
+  observaMediaQuery() {
     this.mediaObserver.asObservable().subscribe(
       media => {
         if (media[0].mqAlias === 'sm' || media[0].mqAlias === 'xs') {
@@ -26,6 +47,7 @@ export class DefaultComponent implements OnInit {
       }
     );
   }
+
 
   sidebarToggler(event) {
     this.sidebarOpen = !this.sidebarOpen;
