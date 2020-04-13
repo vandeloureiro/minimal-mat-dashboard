@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
 
-import { MatSidenavModule } from '@angular/material';
+import { MatSidenavModule } from '@angular/material/sidenav';
 
 import { DefaultRoutingModule } from './default-routing.module';
 import { DefaultComponent } from './default.component';
