@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { MediaObserver, MediaChange } from '@angular/flex-layout';
 import { NavigationEnd, Router } from '@angular/router';
 
 @Component({
@@ -10,15 +9,13 @@ import { NavigationEnd, Router } from '@angular/router';
 export class DefaultComponent implements OnInit {
 
   sidebarOpen = true;
-  sidebarMode = 'size';
+  sidebarMode = 'side';
 
   constructor(
-    private mediaObserver: MediaObserver,
     private router: Router
     ) { }
 
   ngOnInit() {
-    this.observaMediaQuery();
     this.observaTrocaDePagina();
   }
 
@@ -34,6 +31,7 @@ export class DefaultComponent implements OnInit {
   }
 
   // monitora a forma do sidebar (ao lado ou por cima) dependendo o tamanho
+  /*
   observaMediaQuery() {
     this.mediaObserver.asObservable().subscribe(
       media => {
@@ -46,7 +44,7 @@ export class DefaultComponent implements OnInit {
         }
       }
     );
-  }
+  }*/
 
 
   sidebarToggler(event) {

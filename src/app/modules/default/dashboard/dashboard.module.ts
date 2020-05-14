@@ -5,7 +5,6 @@ import { MatCardModule } from '@angular/material/card';
 import { MatDividerModule } from '@angular/material/divider';
 import { MatIconModule } from '@angular/material/icon';
 import { HighchartsChartModule } from 'highcharts-angular';
-import { FlexLayoutModule } from '@angular/flex-layout';
 
 import { DashboardRoutingModule } from './dashboard-routing.module';
 import { DashboardComponent } from './dashboard.component';
@@ -19,7 +18,6 @@ import { WidgetCardComponent } from './widget-card/widget-card.component';
     DashboardRoutingModule,
     MatDividerModule,
     HighchartsChartModule,
-    FlexLayoutModule,
     MatCardModule,
     MatIconModule
   ]

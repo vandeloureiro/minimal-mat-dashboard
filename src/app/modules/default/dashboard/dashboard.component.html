@@ -1,49 +1,54 @@
-<div>
-    <app-widget-area></app-widget-area>
-</div>
 
-<br>
-<mat-divider></mat-divider>
-<br>
+<div class="container">
 
-<div fxLayout="row wrap" fxLayoutAlign="space-between center" fxLayoutGap="1" class="stats-cards">
-    <mat-card fxFlex.gt-sm="24" fxFlex.sm="49" fxFlex="99">
-        <app-widget-card
-            label="New users" total="12k" percentage="50">
-        </app-widget-card>
-    </mat-card>
-    <mat-card fxFlex.gt-sm="24" fxFlex.sm="49" fxFlex="99">
-        <app-widget-card
-            label="Users redention" total="10k" percentage="40">
-        </app-widget-card>
-    </mat-card>
-    <mat-card fxFlex.gt-sm="24" fxFlex.sm="49" fxFlex="99">
-        <app-widget-card
-            label="Users engagament" total="8k" percentage="30">
-        </app-widget-card>
-    </mat-card>
-    <mat-card fxFlex.gt-sm="24" fxFlex.sm="49" fxFlex="99">
-        <app-widget-card
-            label="Users" total="18k" percentage="20">
-        </app-widget-card>
-    </mat-card>
-</div>
-
-<br>
-<mat-divider></mat-divider>
-<br>
-
-<div fxLayout="row" fxLayoutAlign="space-between center" fxLayoutGap="20px">
-    <div fxFlex="60">
-        <mat-card>
-            Table
+    <div>
+        <app-widget-area></app-widget-area>
+    </div>
+    
+    <br>
+    <mat-divider></mat-divider>
+    <br>
+    
+    <div class="row stats-cards">
+        <mat-card class="col-md-3 col-sm-6">
+            <app-widget-card
+                label="New users" total="12k" percentage="50">
+            </app-widget-card>
+        </mat-card>
+        <mat-card class="col-md-3 col-sm-6">
+            <app-widget-card
+                label="Users redention" total="10k" percentage="40">
+            </app-widget-card>
+        </mat-card>
+        <mat-card class="col-md-3 col-sm-6">
+            <app-widget-card
+                label="Users engagament" total="8k" percentage="30">
+            </app-widget-card>
+        </mat-card>
+        <mat-card class="col-md-3 col-sm-6">
+            <app-widget-card
+                label="Users" total="18k" percentage="20">
+            </app-widget-card>
         </mat-card>
     </div>
-    <div fxFlex="40">
-        <mat-card>
-            Pie chart
-        </mat-card>
+    
+    <br>
+    <mat-divider></mat-divider>
+    <br>
+    
+    <div class="row">
+        <div class="col-md-8">
+            <mat-card>
+                Table
+            </mat-card>
+        </div>
+        <div class="col-md-4">
+            <mat-card>
+                Pie chart
+            </mat-card>
+        </div>
     </div>
-</div>
+    
+    <br>
 
-<br>
+</div> <!--container-->
